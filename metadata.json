@@ -1,0 +1,7 @@
+{
+  "name": "Unit Master",
+  "description": "A fun, interactive learning app for kids to master units of measurement through real-world comparisons and AI-powered estimations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
