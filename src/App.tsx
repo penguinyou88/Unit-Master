@@ -14,6 +14,7 @@ import {
   BookOpen, 
   Trophy, 
   Volume2, 
+  VolumeX,
   ChevronRight, 
   Search, 
   ArrowLeft,
@@ -53,22 +54,30 @@ interface UnitInfo {
 
 const UNITS: UnitInfo[] = [
   // Weight
-  { id: 'g', name: 'Gram', symbol: 'g', category: 'weight', emoji: '📎', example: 'A paperclip', description: 'Very light! About the weight of a small paperclip.' },
-  { id: 'kg', name: 'Kilogram', symbol: 'kg', category: 'weight', emoji: '🎒', example: 'A full backpack', description: 'Heavier! 1000 grams. Like a big bag of rice or a full backpack.' },
-  { id: 'oz', name: 'Ounce', symbol: 'oz', category: 'weight', emoji: '🍞', example: 'A slice of bread', description: 'Light. About the weight of a single slice of bread.' },
-  { id: 'lb', name: 'Pound', symbol: 'lb', category: 'weight', emoji: '🍞🍞', example: 'A loaf of bread', description: 'About 16 ounces. Like a whole loaf of bread or a small kitten.' },
+  { id: 'mg', name: 'Milligram', symbol: 'mg', category: 'weight', emoji: '🧂', example: 'A grain of salt', description: 'Super tiny! Like a single grain of salt or a tiny speck of dust.' },
+  { id: 'g', name: 'Gram', symbol: 'g', category: 'weight', emoji: '📎', example: 'A paperclip', description: 'Very light! About the weight of a small paperclip or a grape.' },
+  { id: 'kg', name: 'Kilogram', symbol: 'kg', category: 'weight', emoji: '🎒', example: 'A full backpack', description: 'Heavier! 1000 grams. Like a big bag of rice, a liter of water, or a full backpack.' },
+  { id: 'oz', name: 'Ounce', symbol: 'oz', category: 'weight', emoji: '🍞', example: 'A slice of bread', description: 'Light. About the weight of a single slice of bread or a AA battery.' },
+  { id: 'lb', name: 'Pound', symbol: 'lb', category: 'weight', emoji: '🍞🍞', example: 'A loaf of bread', description: 'About 16 ounces. Like a whole loaf of bread, a small kitten, or a soccer ball.' },
+  { id: 'ton', name: 'Ton', symbol: 't', category: 'weight', emoji: '🐘', example: 'A small elephant', description: 'Huge! Like a small car or a baby elephant.' },
   
   // Length
-  { id: 'cm', name: 'Centimeter', symbol: 'cm', category: 'length', emoji: '☝️', example: 'Width of your finger', description: 'Small! About the width of your pinky finger.' },
-  { id: 'm', name: 'Meter', symbol: 'm', category: 'length', emoji: '🚪', example: 'Height of a door handle', description: 'Long! About the distance from the floor to a door handle.' },
-  { id: 'in', name: 'Inch', symbol: 'in', category: 'length', emoji: '📎', example: 'A large paperclip', description: 'Small length. About the length of a large paperclip.' },
-  { id: 'ft', name: 'Foot', symbol: 'ft', category: 'length', emoji: '📏', example: 'A standard ruler', description: '12 inches. The length of a standard school ruler.' },
+  { id: 'mm', name: 'Millimeter', symbol: 'mm', category: 'length', emoji: '💳', example: 'Thickness of a credit card', description: 'Tiny! About the thickness of a credit card or a ID card.' },
+  { id: 'cm', name: 'Centimeter', symbol: 'cm', category: 'length', emoji: '☝️', example: 'Width of your finger', description: 'Small! About the width of your pinky finger or a blueberry.' },
+  { id: 'in', name: 'Inch', symbol: 'in', category: 'length', emoji: '📎', example: 'A large paperclip', description: 'Small length. About the length of a large paperclip or a thumb.' },
+  { id: 'ft', name: 'Foot', symbol: 'ft', category: 'length', emoji: '📏', example: 'A standard ruler', description: '12 inches. The length of a standard school ruler or a large sub sandwich.' },
+  { id: 'm', name: 'Meter', symbol: 'm', category: 'length', emoji: '🚪', example: 'Height of a door handle', description: 'Long! About the distance from the floor to a door handle or a big guitar.' },
+  { id: 'km', name: 'Kilometer', symbol: 'km', category: 'length', emoji: '🏙️', example: '10 city blocks', description: 'Very long! Like walking across 10 city blocks or a long bridge.' },
 
   // Volume
-  { id: 'ml', name: 'Milliliter', symbol: 'ml', category: 'volume', emoji: '💧', example: 'A few drops', description: 'Tiny amount of liquid. About 20 drops of water.' },
+  { id: 'ml', name: 'Milliliter', symbol: 'ml', category: 'volume', emoji: '💧', example: 'A few drops', description: 'Tiny amount of liquid. About 20 drops of water or a small spoon.' },
+  { id: 'tsp', name: 'Teaspoon', symbol: 'tsp', category: 'volume', emoji: '🥄', example: 'Small spoon of sugar', description: 'Small! Used for baking or medicine.' },
+  { id: 'tbsp', name: 'Tablespoon', symbol: 'tbsp', category: 'volume', emoji: '🥄🥄', example: 'Large spoon of honey', description: '3 teaspoons. About the size of a large soup spoon.' },
+  { id: 'cup', name: 'Cup', symbol: 'cup', category: 'volume', emoji: '🥛', example: 'A glass of juice', description: 'The amount of milk or juice in a standard glass or a small bowl.' },
+  { id: 'pt', name: 'Pint', symbol: 'pt', category: 'volume', emoji: '🍦', example: 'A tub of ice cream', description: '2 cups. Like a standard tub of premium ice cream.' },
+  { id: 'qt', name: 'Quart', symbol: 'qt', category: 'volume', emoji: '🥛🥛🥛', example: 'A carton of milk', description: '2 pints or 4 cups. Like a tall carton of milk or orange juice.' },
   { id: 'l', name: 'Liter', symbol: 'l', category: 'volume', emoji: '🧴', example: 'A large water bottle', description: 'A common size for big water bottles or soda.' },
-  { id: 'cup', name: 'Cup', symbol: 'cup', category: 'volume', emoji: '🥛', example: 'A glass of juice', description: 'The amount of milk or juice in a standard glass.' },
-  { id: 'gal', name: 'Gallon', symbol: 'gal', category: 'volume', emoji: '🥛🥛', example: 'A large milk jug', description: 'A lot of liquid! Like a big jug of milk from the store.' },
+  { id: 'gal', name: 'Gallon', symbol: 'gal', category: 'volume', emoji: '🥛🥛', example: 'A large milk jug', description: 'A lot of liquid! Like a big jug of milk from the store or a bucket.' },
 ];
 
 interface QuizQuestion {
@@ -87,12 +96,17 @@ export default function App() {
   const [xp, setXp] = useState(0);
   const [level, setLevel] = useState(1);
   const [audioLoading, setAudioLoading] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [showLevelUp, setShowLevelUp] = useState(false);
+  const [wrongQuestions, setWrongQuestions] = useState<QuizQuestion[]>([]);
 
   // Leveling Logic
   useEffect(() => {
     const newLevel = Math.floor(xp / XP_PER_LEVEL) + 1;
     if (newLevel > level) {
       setLevel(newLevel);
+      setShowLevelUp(true);
+      speak(`Congratulations! You reached level ${newLevel}! You are now a ${TITLES[Math.min(newLevel - 1, TITLES.length - 1)]}.`);
     }
   }, [xp, level]);
 
@@ -102,7 +116,7 @@ export default function App() {
   const ai = useMemo(() => new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' }), []);
 
   const speak = async (text: string) => {
-    if (!process.env.GEMINI_API_KEY) return;
+    if (!process.env.GEMINI_API_KEY || isMuted) return;
     setAudioLoading(true);
     try {
       const response = await ai.models.generateContent({
@@ -186,6 +200,12 @@ export default function App() {
         </div>
 
         <div className="flex items-center gap-4">
+          <button 
+            onClick={() => setIsMuted(!isMuted)}
+            className="p-2 hover:bg-stone-100 rounded-full transition-colors text-stone-500"
+          >
+            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+          </button>
           <div className="flex flex-col items-end">
             <div className="flex items-center gap-1.5 text-amber-500 font-bold">
               <Star size={16} fill="currentColor" />
@@ -210,8 +230,29 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="space-y-6"
+              className="space-y-8"
             >
+              {/* Prominent Level Display */}
+              <div className="text-center py-6">
+                <motion.div 
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  className="relative inline-block"
+                >
+                  <div className="w-32 h-32 bg-amber-400 rounded-full flex flex-col items-center justify-center text-white shadow-2xl shadow-amber-200 border-4 border-white">
+                    <span className="text-xs font-bold uppercase tracking-widest opacity-80">Level</span>
+                    <span className="text-5xl font-black">{level}</span>
+                  </div>
+                  <motion.div 
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute -inset-2 border-2 border-dashed border-amber-300 rounded-full"
+                  />
+                </motion.div>
+                <h2 className="mt-4 text-2xl font-bold text-stone-800">{currentTitle}</h2>
+                <p className="text-stone-400 font-medium">{xp % XP_PER_LEVEL} / {XP_PER_LEVEL} XP to next level</p>
+              </div>
+
               <div className="bg-emerald-50 rounded-3xl p-8 border border-emerald-100 relative overflow-hidden">
                 <div className="relative z-10">
                   <h2 className="text-3xl font-bold mb-2">Ready to measure?</h2>
@@ -263,12 +304,51 @@ export default function App() {
           )}
 
           {view === 'explore' && <ExploreView onBack={() => setView('home')} onSpeak={speak} />}
-          {view === 'quiz' && <QuizView onBack={() => setView('home')} onCorrect={() => addXp(XP_PER_CORRECT)} onSpeak={speak} />}
+          {view === 'quiz' && (
+            <QuizView 
+              onBack={() => setView('home')} 
+              onCorrect={() => addXp(XP_PER_CORRECT)} 
+              onSpeak={speak} 
+              wrongQuestions={wrongQuestions}
+              setWrongQuestions={setWrongQuestions}
+            />
+          )}
           {view === 'estimator' && <EstimatorView onBack={() => setView('home')} ai={ai} onSpeak={speak} />}
           {view === 'helper' && <HelperView onBack={() => setView('home')} ai={ai} onSpeak={speak} />}
-          {view === 'story' && <StoryView onBack={() => setView('home')} ai={ai} onSpeak={speak} />}
+          {view === 'story' && <StoryView onBack={() => setView('home')} ai={ai} onSpeak={speak} onCorrect={() => addXp(XP_PER_CORRECT * 2)} />}
         </AnimatePresence>
       </main>
+
+      {/* Level Up Modal */}
+      <AnimatePresence>
+        {showLevelUp && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          >
+            <motion.div 
+              initial={{ scale: 0.5, y: 100 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.5, y: 100 }}
+              className="bg-white rounded-[40px] p-8 max-w-sm w-full text-center shadow-2xl border-4 border-amber-400"
+            >
+              <div className="w-24 h-24 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-amber-500">
+                <Trophy size={48} />
+              </div>
+              <h2 className="text-3xl font-black text-stone-800 mb-2">LEVEL UP!</h2>
+              <p className="text-stone-500 mb-6 font-medium">You've reached Level {level} and earned the title of <span className="text-amber-600 font-bold">{currentTitle}</span>!</p>
+              <button 
+                onClick={() => setShowLevelUp(false)}
+                className="w-full bg-amber-500 text-white py-4 rounded-2xl font-bold text-lg shadow-lg shadow-amber-200 active:scale-95 transition-transform"
+              >
+                Awesome!
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {audioLoading && (
         <div className="fixed bottom-4 right-4 bg-white shadow-xl rounded-full p-3 border border-stone-100 flex items-center gap-2 animate-pulse">
@@ -357,19 +437,44 @@ function ExploreView({ onBack, onSpeak }: { onBack: () => void, onSpeak: (t: str
   );
 }
 
-function QuizView({ onBack, onCorrect, onSpeak }: { onBack: () => void, onCorrect: () => void, onSpeak: (t: string) => void }) {
+function QuizView({ onBack, onCorrect, onSpeak, wrongQuestions, setWrongQuestions }: { 
+  onBack: () => void, 
+  onCorrect: () => void, 
+  onSpeak: (t: string) => void,
+  wrongQuestions: QuizQuestion[],
+  setWrongQuestions: React.Dispatch<React.SetStateAction<QuizQuestion[]>>
+}) {
   const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [streak, setStreak] = useState(0);
+  const [isReviewMode, setIsReviewMode] = useState(false);
 
   const generateQuestion = () => {
-    const unit = UNITS[Math.floor(Math.random() * UNITS.length)];
-    const otherUnits = UNITS.filter(u => u.category === unit.category && u.id !== unit.id);
+    if (isReviewMode && wrongQuestions.length > 0) {
+      const q = wrongQuestions[0];
+      setCurrentQuestion(q);
+      setSelected(null);
+      setIsCorrect(null);
+      return;
+    }
+
+    // Difficulty scaling:
+    // 0-5 streak: 3 options, common units
+    // 6-10 streak: 4 options, common units
+    // 11+ streak: 4 options, any units
+    const difficulty = streak < 6 ? 'easy' : streak < 11 ? 'medium' : 'hard';
+    const numOptions = difficulty === 'easy' ? 3 : 4;
+    
+    const availableUnits = difficulty === 'hard' 
+      ? UNITS 
+      : UNITS.filter(u => !['ton', 'mm', 'km', 'mg', 'tsp', 'tbsp', 'pt', 'qt'].includes(u.id));
+
+    const unit = availableUnits[Math.floor(Math.random() * availableUnits.length)];
+    const otherUnits = availableUnits.filter(u => u.category === unit.category && u.id !== unit.id);
     const options = [unit.example];
     
-    // Add 2 distractors
-    const distractors = [...otherUnits].sort(() => 0.5 - Math.random()).slice(0, 2).map(u => u.example);
+    const distractors = [...otherUnits].sort(() => 0.5 - Math.random()).slice(0, numOptions - 1).map(u => u.example);
     options.push(...distractors);
     
     const shuffled = options.sort(() => 0.5 - Math.random());
@@ -389,7 +494,7 @@ function QuizView({ onBack, onCorrect, onSpeak }: { onBack: () => void, onCorrec
 
   useEffect(() => {
     generateQuestion();
-  }, []);
+  }, [isReviewMode]);
 
   const handleAnswer = (index: number) => {
     if (selected !== null) return;
@@ -400,11 +505,35 @@ function QuizView({ onBack, onCorrect, onSpeak }: { onBack: () => void, onCorrec
       onCorrect();
       setStreak(s => s + 1);
       onSpeak("Great job! That's correct.");
+      
+      if (isReviewMode && currentQuestion) {
+        setWrongQuestions(prev => prev.filter(q => q.id !== currentQuestion.id));
+      }
     } else {
       setStreak(0);
       onSpeak(`Oops! The correct answer was ${currentQuestion?.options[currentQuestion.correctIndex]}.`);
+      
+      if (!isReviewMode && currentQuestion) {
+        setWrongQuestions(prev => {
+          if (prev.find(q => q.unit === currentQuestion.unit)) return prev;
+          return [...prev, currentQuestion];
+        });
+      }
     }
   };
+
+  if (!currentQuestion && isReviewMode && wrongQuestions.length === 0) {
+    return (
+      <div className="text-center py-12 space-y-6">
+        <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-500">
+          <CheckCircle2 size={40} />
+        </div>
+        <h2 className="text-2xl font-bold">Review Complete!</h2>
+        <p className="text-stone-500">You've mastered all your tricky questions.</p>
+        <button onClick={() => setIsReviewMode(false)} className="bg-emerald-500 text-white px-8 py-3 rounded-2xl font-bold">Back to Quiz</button>
+      </div>
+    );
+  }
 
   if (!currentQuestion) return null;
 
@@ -418,13 +547,26 @@ function QuizView({ onBack, onCorrect, onSpeak }: { onBack: () => void, onCorrec
         <button onClick={onBack} className="p-2 hover:bg-stone-100 rounded-full">
           <ArrowLeft size={24} />
         </button>
-        <div className="flex items-center gap-2 bg-amber-50 px-4 py-1.5 rounded-full border border-amber-100">
-          <Zap size={16} className="text-amber-500 fill-amber-500" />
-          <span className="text-sm font-bold text-amber-700">{streak} Streak</span>
+        <div className="flex gap-2">
+          {wrongQuestions.length > 0 && (
+            <button 
+              onClick={() => setIsReviewMode(!isReviewMode)}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold border transition-colors ${
+                isReviewMode ? 'bg-rose-500 text-white border-rose-500' : 'bg-white text-rose-500 border-rose-200'
+              }`}
+            >
+              {isReviewMode ? 'Exit Review' : `Review (${wrongQuestions.length})`}
+            </button>
+          )}
+          <div className="flex items-center gap-2 bg-amber-50 px-4 py-1.5 rounded-full border border-amber-100">
+            <Zap size={16} className="text-amber-500 fill-amber-500" />
+            <span className="text-sm font-bold text-amber-700">{streak} Streak</span>
+          </div>
         </div>
       </div>
 
       <div className="text-center space-y-4">
+        {isReviewMode && <p className="text-rose-500 font-bold text-sm uppercase tracking-widest">Reviewing a tricky one!</p>}
         <div className="inline-block p-4 bg-purple-100 rounded-3xl text-purple-600 mb-2">
           {currentQuestion.category === 'weight' && <Scale size={40} />}
           {currentQuestion.category === 'length' && <Ruler size={40} />}
@@ -696,23 +838,78 @@ function HelperView({ onBack, ai, onSpeak }: { onBack: () => void, ai: GoogleGen
   );
 }
 
-function StoryView({ onBack, ai, onSpeak }: { onBack: () => void, ai: GoogleGenAI, onSpeak: (t: string) => void }) {
-  const [story, setStory] = useState<string | null>(null);
+function StoryView({ onBack, ai, onSpeak, onCorrect }: { onBack: () => void, ai: GoogleGenAI, onSpeak: (t: string) => void, onCorrect: () => void }) {
+  const [storyPart, setStoryPart] = useState<{ text: string, options: string[], correctIndex: number } | null>(null);
+  const [storyHistory, setStoryHistory] = useState<string[]>([]);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [selected, setSelected] = useState<number | null>(null);
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
   const generateStory = async () => {
     setLoading(true);
+    setSelected(null);
+    setIsCorrect(null);
+    setImageUrl(null);
     try {
+      // 1. Generate Story Text
+      const historyContext = storyHistory.slice(-3).join(" ");
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
-        contents: "Tell a short, 3-sentence adventure story for a 7-year-old where measuring something (weight, length, or volume) saves the day. Use lots of emojis.",
+        contents: `You are writing a continuous adventure story for a 7-year-old. 
+        Previous context: ${historyContext || "The adventure begins!"}
+        
+        Continue the story with a new challenge that requires a missing unit. 
+        Example: "The hero reached a bridge that was [BLANK] long."
+        Provide 3 options where only one makes sense (e.g., 5 Meters, 5 Grams, 5 Liters).
+        Return JSON: { "text": string, "options": string[], "correctIndex": number, "imagePrompt": string }`,
+        config: { responseMimeType: "application/json" }
       });
-      setStory(response.text);
-      onSpeak(response.text);
+      const data = JSON.parse(response.text);
+      setStoryPart(data);
+      setStoryHistory(prev => [...prev, data.text.replace("[BLANK]", data.options[data.correctIndex])]);
+      onSpeak(data.text.replace("[BLANK]", "something"));
+
+      // 2. Generate Image
+      const imageResponse = await ai.models.generateContent({
+        model: 'gemini-2.5-flash-image',
+        contents: {
+          parts: [
+            {
+              text: `A colorful, child-friendly illustration for a storybook: ${data.imagePrompt}`,
+            },
+          ],
+        },
+        config: {
+          imageConfig: {
+            aspectRatio: "16:9",
+          },
+        },
+      });
+      
+      for (const part of imageResponse.candidates[0].content.parts) {
+        if (part.inlineData) {
+          setImageUrl(`data:image/png;base64,${part.inlineData.data}`);
+          break;
+        }
+      }
     } catch (err) {
       console.error(err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleAnswer = (idx: number) => {
+    if (selected !== null) return;
+    setSelected(idx);
+    const correct = idx === storyPart?.correctIndex;
+    setIsCorrect(correct);
+    if (correct) {
+      onCorrect();
+      onSpeak("Perfect! You saved the day!");
+    } else {
+      onSpeak("Oh no! That doesn't seem right.");
     }
   };
 
@@ -729,39 +926,83 @@ function StoryView({ onBack, ai, onSpeak }: { onBack: () => void, ai: GoogleGenA
         <h2 className="text-2xl font-bold">Story Mode</h2>
       </div>
 
-      <div className="bg-rose-50 p-8 rounded-[40px] border border-rose-100 text-center space-y-6 relative overflow-hidden">
+      <div className="bg-rose-50 p-8 rounded-[40px] border border-rose-100 text-center space-y-6 relative overflow-hidden min-h-[400px] flex flex-col justify-center">
         <div className="relative z-10">
-          <div className="bg-white w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl shadow-rose-200 mb-6 text-rose-500">
-            <BookOpen size={40} />
-          </div>
-          
-          {story ? (
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-xl font-bold text-rose-900 leading-relaxed italic"
-            >
-              "{story}"
-            </motion.p>
-          ) : (
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-rose-800">Adventure Awaits!</h3>
-              <p className="text-rose-600">Click below to generate a measurement mission.</p>
+          {!storyPart && !loading && (
+            <div className="space-y-6">
+              <div className="bg-white w-20 h-20 rounded-3xl flex items-center justify-center mx-auto shadow-xl shadow-rose-200 text-rose-500">
+                <BookOpen size={40} />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold text-rose-800">Interactive Adventure</h3>
+                <p className="text-rose-600">Help the hero by choosing the right units!</p>
+              </div>
+              <button 
+                onClick={generateStory}
+                disabled={!process.env.GEMINI_API_KEY}
+                className="bg-rose-500 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-rose-200 hover:bg-rose-600 transition-colors disabled:opacity-50"
+              >
+                {!process.env.GEMINI_API_KEY ? "Story Mode Offline" : "Start Adventure"}
+              </button>
             </div>
           )}
 
-          <button 
-            onClick={generateStory}
-            disabled={loading || !process.env.GEMINI_API_KEY}
-            className="mt-8 bg-rose-500 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-rose-200 hover:bg-rose-600 transition-colors disabled:opacity-50 flex items-center gap-2 mx-auto"
-          >
-            {!process.env.GEMINI_API_KEY ? "Story Mode Offline" : (loading ? "Writing..." : (story ? "Another Story" : "Generate Story"))}
-            {!loading && process.env.GEMINI_API_KEY && <Sparkles size={20} />}
-          </button>
-        </div>
-        
-        <div className="absolute top-0 right-0 opacity-5 pointer-events-none">
-          <Trophy size={200} />
+          {loading && (
+            <div className="space-y-4">
+              <div className="w-full aspect-video bg-rose-100 rounded-2xl animate-pulse flex items-center justify-center">
+                <Sparkles size={48} className="text-rose-300 animate-spin" />
+              </div>
+              <div className="space-y-2">
+                <div className="h-4 bg-rose-200 rounded-full w-3/4 mx-auto animate-pulse" />
+                <div className="h-4 bg-rose-200 rounded-full w-1/2 mx-auto animate-pulse" />
+              </div>
+            </div>
+          )}
+
+          {storyPart && (
+            <div className="space-y-6">
+              {imageUrl && (
+                <motion.img 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  src={imageUrl} 
+                  alt="Story scene" 
+                  className="w-full aspect-video object-cover rounded-2xl shadow-lg border-2 border-white"
+                  referrerPolicy="no-referrer"
+                />
+              )}
+              
+              <p className="text-2xl font-bold text-rose-900 leading-relaxed italic">
+                "{storyPart.text.replace("[BLANK]", "_______")}"
+              </p>
+
+              <div className="grid gap-3">
+                {storyPart.options.map((opt, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleAnswer(idx)}
+                    disabled={selected !== null}
+                    className={`p-4 rounded-2xl font-bold text-lg border-2 transition-all ${
+                      selected === idx 
+                        ? (isCorrect ? 'bg-emerald-500 border-emerald-500 text-white' : 'bg-rose-500 border-rose-500 text-white')
+                        : (selected !== null && idx === storyPart.correctIndex ? 'bg-emerald-100 border-emerald-500 text-emerald-700' : 'bg-white border-rose-200 text-rose-700')
+                    }`}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+
+              {selected !== null && (
+                <button 
+                  onClick={generateStory}
+                  className="w-full bg-rose-500 text-white py-4 rounded-2xl font-bold shadow-lg"
+                >
+                  Next Adventure
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
